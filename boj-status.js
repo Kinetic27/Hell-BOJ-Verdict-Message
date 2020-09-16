@@ -16,15 +16,15 @@ const conv = {
 };
 
 
-let t = 1, tmp = "";
+let t = 1, tmp = "", id;
 
 for(let i in arr){
     let now = arr[i].innerHTML;
     let str = arr[i].innerText;
-    let id = stat.rows[i].cells[0].textContent;
-
+    
     if(conv[str] == undefined) continue;
 
+    id = stat.rows[i].cells[0].textContent;
 
     if(str !== "맞았습니다!!" && tmp !== id)
         now += 'ㅋ'.repeat(t++);
