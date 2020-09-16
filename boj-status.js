@@ -18,6 +18,7 @@ const conv = {
 
 let t = 1, tmp = "", id;
 
+// ㅋ 부분 참고 : https://gist.github.com/kiwiyou/ffb8beab11cbc64cb696639fd0c984c7
 for(let i in arr){
     let now = arr[i].innerHTML;
     let str = arr[i].innerText;
