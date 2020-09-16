@@ -1,4 +1,6 @@
 let arr = document.getElementsByClassName("result");
+let stat = document.getElementById('status-table');
+
 const RED = "<span class=\"result-wa \">";
 const BLUE = "<span class=\"result-ce \">";
 const GREEN = "<span class=\"result-ac \">";
@@ -13,10 +15,24 @@ const conv = {
     "출력 초과": "꼬리가 길면 잡힌다."
 };
 
+
+let t = 1, tmp = "";
+
 for(let i in arr){
     let now = arr[i].innerHTML;
     let str = arr[i].innerText;
+    let id = stat.rows[i].cells[0].textContent;
+
     if(conv[str] == undefined) continue;
+
+
+    if(str !== "맞았습니다!!" && tmp !== id)
+        now += 'ㅋ'.repeat(t++);
+    else
+        t = 1;
+
     now = now.replace(str, conv[str]);
+
+    tmp = id;
     arr[i].innerHTML = now;
 }
